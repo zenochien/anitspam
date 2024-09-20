@@ -1,0 +1,5 @@
+{
+  "tableName": "anitspamTable",
+  "partitionKeyName": "email",
+  "partitionKeyType": "S"
+}

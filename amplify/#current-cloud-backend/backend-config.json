@@ -1,0 +1,49 @@
+{
+  "api": {
+    "apie8f22478": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "anitspam"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "anitspam": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_anitspam_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "anitspam"
+        }
+      ]
+    },
+    "AMPLIFY_function_anitspam_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "anitspam"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "anitspamTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

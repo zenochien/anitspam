@@ -1,0 +1,90 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-anitspam-dev-3a1d3-authRole",
+      "UnauthRoleArn": "arn:aws:iam::992382405090:role/amplify-anitspam-dev-3a1d3-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::992382405090:role/amplify-anitspam-dev-3a1d3-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-anitspam-dev-3a1d3-deployment",
+      "UnauthRoleName": "amplify-anitspam-dev-3a1d3-unauthRole",
+      "StackName": "amplify-anitspam-dev-3a1d3",
+      "StackId": "arn:aws:cloudformation:us-east-1:992382405090:stack/amplify-anitspam-dev-3a1d3/fa773670-7715-11ef-bd58-129bc0896f2b",
+      "AmplifyAppId": "d2sgzny858aw1w"
+    }
+  },
+  "function": {
+    "anitspam": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-09-20T06:17:48.535Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-09-20T06:17:49.525Z",
+      "distZipFilename": "anitspam-474b426d346b4d735a55-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-anitspam-dev-3a1d3-deployment",
+        "s3Key": "amplify-builds/anitspam-474b426d346b4d735a55-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-anitspam-dev-3a1d3-deployment/amplify-cfn-templates/function/anitspam-cloudformation-template.json",
+        "logicalId": "functionanitspam"
+      },
+      "lastPushTimeStamp": "2024-09-20T06:19:35.849Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::992382405090:role/anitspamLambdaRole96f6ad88-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:992382405090:function:anitspam-dev",
+        "Name": "anitspam-dev",
+        "LambdaExecutionRole": "anitspamLambdaRole96f6ad88-dev"
+      },
+      "lastPushDirHash": "W1weBE08sI6kcuWVOqd8g2vjRfs="
+    }
+  },
+  "api": {
+    "apie8f22478": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "anitspam",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-anitspam-dev-3a1d3-deployment/amplify-cfn-templates/api/apie8f22478-cloudformation-template.json",
+        "logicalId": "apiapie8f22478"
+      },
+      "lastPushTimeStamp": "2024-09-20T06:19:35.849Z",
+      "output": {
+        "ApiName": "apie8f22478",
+        "RootUrl": "https://lxvr08nmwh.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "lxvr08nmwh"
+      },
+      "lastPushDirHash": "v6D9k9V/kmQAHu/4yS8KJRJ8NXI="
+    }
+  },
+  "storage": {
+    "anitspamTable": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-anitspam-dev-3a1d3-deployment/amplify-cfn-templates/storage/anitspamTable-cloudformation-template.json",
+        "logicalId": "storageanitspamTable"
+      },
+      "lastPushTimeStamp": "2024-09-20T06:19:35.849Z",
+      "output": {
+        "PartitionKeyName": "email",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:992382405090:table/anitspamTable-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:992382405090:table/anitspamTable-dev/stream/2024-09-20T06:18:04.366",
+        "PartitionKeyType": "S",
+        "Name": "anitspamTable-dev"
+      },
+      "lastPushDirHash": "ZJcBfr/qMxL37QCq8Yn5JgCK5tY="
+    }
+  }
+}

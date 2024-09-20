@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-anitspam-dev-3a1d3-authRole",
+      "UnauthRoleArn": "arn:aws:iam::992382405090:role/amplify-anitspam-dev-3a1d3-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::992382405090:role/amplify-anitspam-dev-3a1d3-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-anitspam-dev-3a1d3-deployment",
+      "UnauthRoleName": "amplify-anitspam-dev-3a1d3-unauthRole",
+      "StackName": "amplify-anitspam-dev-3a1d3",
+      "StackId": "arn:aws:cloudformation:us-east-1:992382405090:stack/amplify-anitspam-dev-3a1d3/fa773670-7715-11ef-bd58-129bc0896f2b",
+      "AmplifyAppId": "d2sgzny858aw1w"
+    },
+    "categories": {
+      "function": {
+        "anitspam": {
+          "deploymentBucketName": "amplify-anitspam-dev-3a1d3-deployment",
+          "s3Key": "amplify-builds/anitspam-474b426d346b4d735a55-build.zip"
+        }
+      },
+      "api": {
+        "apie8f22478": {}
+      },
+      "storage": {
+        "anitspamTable": {}
+      }
+    }
+  }
+}

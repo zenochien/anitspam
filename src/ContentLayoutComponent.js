@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ContentLayout from "@cloudscape-design/components/content-layout";
 import Container from "@cloudscape-design/components/container";
 import Header from "@cloudscape-design/components/header";
@@ -12,6 +12,7 @@ import Textarea from "@cloudscape-design/components/textarea";
 import Select from "@cloudscape-design/components/select";
 import Alert from "@cloudscape-design/components/alert";
 import { Box } from "@cloudscape-design/components";
+import Modal from "@cloudscape-design/components/modal"; // Import Modal component
 
 import { get, post } from "aws-amplify/api"; //Dấu "" là double quotes
 
@@ -31,6 +32,18 @@ export default function ContentLayoutComponent() {
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [selectedItemName, setSelectedItemName] = React.useState("Chuyển khoản");
     const [selectedImage, setSelectedImage] = React.useState("/images/5.png");
+
+    const [isWelcomeModalVisible, setIsWelcomeModalVisible] = React.useState(true); // State for welcome modal
+
+    // Dismiss the welcome modal
+    const handleDismissWelcomeModal = () => {
+        setIsWelcomeModalVisible(false);
+    };
+
+    // useEffect to trigger the welcome modal when the component mounts
+    useEffect(() => {
+        setIsWelcomeModalVisible(true); // Automatically show welcome pop-up when the page loads
+    }, []);
 
     // Create a ref for the form container
     const formRef = useRef(null);
@@ -163,6 +176,22 @@ export default function ContentLayoutComponent() {
             <Box className="header-content" variant="h1" padding={{ top: "m" }}>
                 Cộng đồng người Điếc/Khiếm thính ở thành phố Hồ Chí Minh
             </Box>
+
+            {/* Welcome Modal with Image */}
+            <Modal
+                visible={isWelcomeModalVisible}
+                closeAriaLabel="Close"
+                onDismiss={handleDismissWelcomeModal}
+            >
+                {/* Image displayed in the pop-up */}
+                <Box margin={{ bottom: "m" }}>
+                    <img
+                        src="/images/9.png" // Update with the actual image URL path
+                        style={{ width: "100%", height: "auto" }}
+                    />
+                </Box>
+                {/* <Button onClick={handleDismissWelcomeModal}>Đóng</Button> */}
+            </Modal>
             <div className="content-container">
                 <div className="tiles-container">
                     <Tiles
